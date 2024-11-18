@@ -1,0 +1,37 @@
+<div class="cart-container">
+    <div class="cart-items">
+    <h2>Your Cart</h2>
+    
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+            <img [src]="item.food.imageUrl" alt="{{ item.food.name }}" class="food-image" />
+
+            <div class="item-details">
+                <span class="item-name">{{ item.food.name }}</span>
+                <span class="item-price">€ {{ item.food.price}}</span>
+            </div>
+
+            <div class="quantity-control">
+                <span class="item-quantity">€{{ item.price}}</span>
+                <button class="quantity-button" (click)="decreaseQuantity(item.food.id)">-</button>
+                <span class="item-quantity">{{ item.quantity }}</span>
+                <button class="quantity-button" (click)="increaseQuantity(item.food.id)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display this message if the cart is empty -->
+    <ng-template #emptyCart>
+        <p>Your cart is empty.</p>
+    </ng-template>
+</div>
+
+<div class="payment">
+    <span class="items_total">Total Items: {{getTotalQuantity()}}</span>
+    <div class="divider"></div>
+    <span class="price-total">Total Price: € {{getTotalPrice()}}</span>
+    <button class="checkout-button" >Go to Checkout</button>
+</div>
+
+</div>
+

@@ -1,0 +1,59 @@
+/* Main container styling */
+.food-container {
+    display: flex;
+    flex-direction: column;     /* Stack image and details vertically */
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);               /* Responsive width */
+    max-width: 100%;           /* Limit container width */
+    text-align: center;
+    margin: 10px; 
+    height: 650px;              /* Margin to avoid screen edges */
+}
+
+/* Food image styling */
+.food-container img {
+    width: 50%; 
+    max-width: 500px;              /* Make image responsive */
+    height: 50%;
+    border-radius: 8px;
+    margin-bottom: 15px;       /* Spacing below image */
+}
+
+/* Food details text styling */
+.food-details h3 {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.food-details p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.food-details p:last-of-type {
+    font-weight: bold;        /* Emphasize the rating */
+    color: #ff9900;           /* Set a distinct color for stars */
+}
+
+.add-cart {
+    background-color: #4CAF50; /* Green color */
+    border: none;
+    color: white; /* Text color */
+    padding: 15px 32px; /* Padding around the text */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 10px;
+  }
+  
+  .add-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

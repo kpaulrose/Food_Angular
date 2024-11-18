@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="food-list">
+    <a *ngFor="let food of foods"style="text-decoration:none; color:inherit" class="food-item" [routerLink]="'/food/food-detail/'+ food.id">
+        <div class="food">
+           <img [src]="food.imageUrl" alt="food.imageUrl">
+            <div class="food-image">
+                <h3>{{ food.name }}</h3>
+                <p>{{ food.price }}</p>
+                <p>{{ food.cookTime }} minutes</p>
+                <p>Stars: {{ food.stars }}</p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<!-- You can show a loading spinner or a message while loading -->
+<div *ngIf="foods.length === 0">Loading...</div>

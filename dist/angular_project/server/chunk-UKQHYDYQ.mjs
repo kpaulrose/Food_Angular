@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{d as e,g as i,pa as n}from"./chunk-QXFP2ZB7.mjs";var p="http://localhost:5001",r=p+"/api/foods",s=r+"/api/foods/";var m=(()=>{class t{constructor(o){this.http=o}getFood(){return this.http.get(r)}getFoodById(o){return this.http.get(s+o)}static{this.\u0275fac=function(c){return new(c||t)(i(n))}}static{this.\u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{m as a};
