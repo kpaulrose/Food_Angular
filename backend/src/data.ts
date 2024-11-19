@@ -145,6 +145,7 @@
       id: 1,
       name: 'Rose1',
       email: 'rose1@gmail.com',
+      address: "albert vather strasse",
       password: '123'
     }
     ,
@@ -152,6 +153,7 @@
       id: 1,
       name: 'Rose2',
       email: 'rose2@gmail.com',
+      address: "albertain strasse",
       password: '123'
     }];
 

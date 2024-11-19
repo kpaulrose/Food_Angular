@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../service/cart.service';
 import { CartItem } from '../../models/cart_item';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from "../../header/header.component";
 
 @Component({
   selector: 'app-food-details',
   standalone: true,
-  imports: [RouterModule,HttpClientModule],
+  imports: [RouterModule, HttpClientModule, HeaderComponent],
   templateUrl: './food-details.component.html',
   styleUrl: './food-details.component.scss'
 })

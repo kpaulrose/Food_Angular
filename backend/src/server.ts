@@ -25,7 +25,13 @@ app.post("/api/user/login", (req, res) => {
 
     if (user) {
         const token = jwt.sign({ id: user.id, email: user.email }, 'your_secret_key', { expiresIn: '1h' });
-        res.json({ message: 'Success', token });
+        res.send( {
+            id: user.id,
+            email: user.email,
+            name: user.name,
+            address: user.address,
+            token: token
+          });
     } else {
         res.status(400).send("Invalid credentials");
     }

@@ -3,11 +3,12 @@ import { CartService } from '../../service/cart.service';
 import { CartItem } from '../../models/cart_item';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../../header/header.component";
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, HeaderComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })

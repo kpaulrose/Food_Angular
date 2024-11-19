@@ -10,4 +10,10 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
 
+  Logout(): void{
+    localStorage.removeItem('user');
+    alert("hallo");
+  }
 }
+
+

@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
 
     this.userService.login(email, password).subscribe({
       next: (response) => {
-        console.log('Login successful:', response);
+        localStorage.setItem('user', JSON.stringify(response));
         alert('Login Successful');
         this.router.navigate(['/dashboard']);
 
