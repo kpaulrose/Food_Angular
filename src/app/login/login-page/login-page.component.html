@@ -18,9 +18,15 @@
       </div>
     </div>
     
-    <!-- Wrap the submit button in a div with class 'button-wrapper' -->
     <div class="button-wrapper">
-      <button type="submit">Login</button>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [routerLink]="'/register'"
+      >
+        Not Yet Registered?
+      </button>
     </div>
   </form>
   

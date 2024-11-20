@@ -1,0 +1,86 @@
+/* General styles for the form */
+
+.container{
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f0f0f0; /* Optional light gray background */
+  }
+  
+  /* Styling for the form */
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eafaf1; /* Light green background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 675px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+    color: #2e7d32; /* Dark green text */
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #2e7d32;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    height: 35px;
+    padding: 5px 10px;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.9rem;
+  }
+  
+  .form-control:focus {
+    border: 1px solid #388e3c;
+    box-shadow: 0 0 4px rgba(56, 142, 60, 0.3);
+  }
+  
+  .error-message small {
+    color: #d32f2f; /* Red for error messages */
+    font-size: 0.8rem;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4caf50; /* Bright green button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  
+  .btn-submit:active {
+    background-color: #2e7d32;
+  }
+  
+
+  
