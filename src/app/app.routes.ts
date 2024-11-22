@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
     { path: 'food', loadChildren: () => import('./food/food.module').then(m => m.FoodModule) },
+    { path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule) },
     { path: 'user', loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule) },
     { path: 'cart', loadChildren: () => import('./cart-details/cart-details.module').then(m => m.CartDetailsModule) },
     { path: '', loadChildren: () => import('./login/login.module').then(m => m.LoginModule ) },

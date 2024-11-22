@@ -1,0 +1,150 @@
+/* General Container Styles */
+.checkout-container {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    height: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f9f4; /* Light greenish background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styles */
+  h2, h3 {
+    color: #2c6e49; /* Dark green color */
+    font-weight: bold;
+    margin-bottom: 15px;
+    align-items: center; /* Optional for vertical centering */
+  text-align: center;
+  }
+  
+  /* User Information Section */
+  .user-info {
+    margin-bottom: 30px;
+    background-color: #e4f5e3; /* Light green background */
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .user-details p {
+    font-size: 16px;
+    color: #2c6e49; /* Dark green */
+    margin: 5px 0; /* Add some spacing between lines */
+  }
+  
+  .user-details p strong {
+    font-size: 16px;
+    color: #1d5130; /* Even darker green for labels */
+    font-weight: bold; /* Highlight labels (User Name, Address) */
+  }
+  
+  .user-details {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f9fcf8; /* Very light green for better contrast */
+    border-radius: 5px;
+    border: 1px solid #c8e6c9; /* Subtle border for emphasis */
+  }
+  
+  .user-details p span {
+    display: inline-block; /* Ensures text aligns properly */
+    color: #3c763d; /* Slightly muted green for dynamic text */
+  }
+  
+  
+  /* Cart Items Section */
+  .cart-items {
+    margin-bottom: 30px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .food-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-name {
+    display: block;
+    font-weight: bold;
+    color: #2c6e49;
+  }
+  
+  .item-price {
+    display: block;
+    color: #5a9b72; /* Slightly muted green for price */
+  }
+  
+  .quantity-control span {
+    display: inline-block; /* Makes each span behave like a block within a line */
+    margin-right: 15px; /* Adds space between the spans */
+    font-size: 14px; /* Optional: ensure text size is consistent */
+    color: #3c763d; /* Optional: matches your green text color scheme */
+  }
+  
+  .quantity-control {
+    text-align: left; /* Ensures content aligns to the left */
+  }
+  
+  
+  .empty-cart-text {
+    color: #d9534f; /* Red color for empty cart message */
+    font-weight: bold;
+  }
+  
+  /* Total Section */
+  .total-section {
+    background-color: #e9f7e6; /* Light greenish background for totals */
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .total-details {
+    font-size: 16px;
+    color: #3c763d;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+     gap: 20px;
+  }
+  
+  /* Payment Button Section */
+  .payment-section {
+    text-align: center;
+  }
+  
+  .payment-button {
+    padding: 12px 20px;
+    background-color:#28a745;; /* Dark green */
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .payment-button:hover {
+    background-color: #1f4c32; /* Darker green on hover */
+  }
+  
+  .payment-button:focus {
+    outline: none;
+  }
+  

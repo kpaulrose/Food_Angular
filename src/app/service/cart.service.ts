@@ -89,5 +89,26 @@ export class CartService {
     this.saveCartToLocalStorage(updatedItems); // Save to local storage
   }
 
+  getTotalQuantity(items:CartItem[]): number {
+    let totalQuantity = 0;
+    items.forEach(item => {
+      totalQuantity = totalQuantity + item.quantity
+    });
+    return totalQuantity;
+  }
+
+  getTotalPrice(items:CartItem[]): number{
+  let totalPrice =0;
+  items.forEach(item =>{
+    totalPrice= totalPrice + (item.quantity * item.food.price)
+  });
+  return totalPrice;
+  }
+
+  clearCart(){
+    this.itemsSubject.next([]); // Emit an empty array to reset the cart
+  this.saveCartToLocalStorage([]); // Clear the cart in local storage
+  }
 
 }
+ 

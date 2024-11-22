@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="checkout-container">
+    <!-- User Information Section -->
+    <div class="user-info">
+      <h2>Checkout</h2>
+      <div class="user-details">
+        <p><strong>Name:</strong> {{ user?.name }}</p>
+        <p><strong>Delivery Address :</strong> {{ user?.address }}</p>
+      </div>
+    </div>
+  
+    <!-- Cart Items Section -->
+    <div class="cart-items">
+      <h3>Your Cart Items:</h3>
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems" class="cart-item">
+          <img [src]="item.food.imageUrl" alt="{{ item.food.name }}" class="food-image" />
+          <div class="item-details">
+            <span class="item-name">{{ item.food.name }}</span>
+            <span class="item-price">€ {{ item.food.price }}</span>
+          </div>
+          <div class="quantity-control">
+            <span>Quantity: {{ item.quantity }}</span>
+            <span>Total: € {{ item.quantity * item.food.price }}</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- If cart is empty -->
+      <ng-template #emptyCart>
+        <p class="empty-cart-text">Your cart is empty.</p>
+      </ng-template>
+    </div>
+  
+    <!-- Total Section -->
+    <div class="total-section">
+      <div class="total-details">
+        <span><strong>Total Quantity:</strong> {{ totalQuantity }}</span>
+        <span><strong>Total Price:</strong> € {{ totalPrice }}</span>
+      </div>
+    </div>
+  
+    <!-- Payment Button -->
+    <div class="payment-section">
+      <button class="payment-button">Proceed to Payment</button>
+    </div>
+  </div>
+  

@@ -15,11 +15,23 @@ import { HeaderComponent } from "../../header/header.component";
 export class CartComponent {
 
   cartItems: CartItem[] = [];
+  totalQuantity: number = 0;
+  totalPrice: number = 0;
   constructor(private cartService: CartService) {
 
-    this.cartService.getItem().subscribe((cartItem) =>
-      this.cartItems = cartItem);
+    this.cartService.getItem().subscribe((cartItem) =>{
+      this.cartItems = cartItem;
+      this.updateCartSummary(this.cartItems);
+    }
+  );
   }
+
+
+  updateCartSummary(items:CartItem[]) {
+    this.totalQuantity = this.cartService.getTotalQuantity(items);
+    this.totalPrice = this.cartService.getTotalPrice(items);
+  }
+
   decreaseQuantity(id: number) {
     const item = this.cartItems.find(item => item.id == id);
     if (item) {
@@ -39,20 +51,6 @@ export class CartComponent {
 
   }
 
-  getTotalQuantity(): number {
-    let totalQuantity = 0;
-    this.cartItems.forEach(item => {
-      totalQuantity = totalQuantity + item.quantity
-    });
-    return totalQuantity;
-  }
-
-  getTotalPrice(): number{
-  let totalPrice =0;
-  this.cartItems.forEach(item =>{
-    totalPrice= totalPrice + (item.quantity * item.price)
-  });
-  return totalPrice;
-  }
 
 }
+ 

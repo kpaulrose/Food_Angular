@@ -40,16 +40,21 @@ export class LoginPageComponent implements OnInit {
 
     this.userService.login(email, password).subscribe({
       next: (response) => {
-        localStorage.setItem('user', JSON.stringify(response));
+        localStorage.setItem('user', JSON.stringify(response.user));
+        console.log("response", response);
         alert('Login Successful');
         this.router.navigate(['/dashboard']);
 
         // Handle successful login (e.g., navigate to dashboard)
       },
       error: (error) => {
-        console.error('Login failed:', error);
-        this.errorMessage = 'Invalid credentials. Please try again.';
-        // Handle error (e.g., show error message)
+        if (error.status === 400) {
+          alert("please check the credencials");
+        } else if (error.status === 500) {
+          alert("Registration failed: Server error. Please try again later.");
+        } else {
+          alert("Registration failed: Unexpected error. Please try again.");
+        }
       },
       complete: () => {
         console.log('Login request completed');
