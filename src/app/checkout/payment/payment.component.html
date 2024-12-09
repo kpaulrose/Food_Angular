@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="payment-container">
+  <h2 class="payment-title">Payment</h2>
+
+  <div class="payment-summary">
+    <p><strong>Total Quantity:</strong> {{ totalQuantity }}</p>
+    <p><strong>Total Price:</strong> € {{ totalPrice }}</p>
+  </div>
+
+  <div class="payment-options">
+    <h3>Choose Payment Method</h3>
+    <div 
+      class="payment-method" 
+      [class.selected]="selectedPayment === 'cash'" 
+      (click)="selectPayment('cash')">
+      <i class="fas fa-cash"></i>
+      <span>Cash</span>
+    </div>
+    <div 
+      class="payment-method" 
+      [class.selected]="selectedPayment === 'credit-card'" 
+      (click)="selectPayment('credit-card')">
+      <i class="fas fa-credit-card"></i>
+      <span>Credit Card</span>
+    </div>
+    <div 
+      class="payment-method" 
+      [class.selected]="selectedPayment === 'paypal'" 
+      (click)="selectPayment('paypal')">
+      <i class="fab fa-paypal"></i>
+      <span>PayPal</span>
+    </div>
+    <div 
+      class="payment-method" 
+      [class.selected]="selectedPayment === 'bank-transfer'" 
+      (click)="selectPayment('bank-transfer')">
+      <i class="fas fa-university"></i>
+      <span>Bank Transfer</span>
+    </div>
+  </div>
+
+  <div class="payment-button">
+    <button class="confirm-payment" (click)="confirmPayment()">Confirm Payment</button>
+  </div>
+</div>

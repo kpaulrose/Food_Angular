@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LOGIN, REGISTER } from '../api/url';
+import { LOGIN, REGISTER, USER_UPDATE } from '../api/url';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,12 @@ export class UserService {
 
   register(name: string, email:string, address:string, password:string) {
     const body = { name, email, address, password };
-    console.log(body);
     return this.http.post(REGISTER, body); // Ensure REGISTER points to the correct backend route
+  }
+
+  update(id:string,name:string,email:string,address:string,password:string){
+    const body = {id,name,email,address,password};
+    return this.http.put(USER_UPDATE,body);
+
   }
 }

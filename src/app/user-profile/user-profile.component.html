@@ -1,24 +1,58 @@
 <app-header></app-header>
-<div class="container" *ngIf="user; else noUser">
-    <h1 class="title">Profile Information</h1>
-    <div class="profile-card">
-      <div class="profile-avatar">
-        <img 
+<div class="container">
+  <h1 class="title">Profile Information</h1>
+  
+  <div class="profile-card">
+    <div class="profile-avatar">
+      <img 
         [src]="user.avatar || 'assets/download.png'" 
         alt="User Avatar" />
+    </div>
+    
+    <div class="profile-details" *ngIf="!isEditMode; else editTemplate">
+      <div class="profile-row">
+        <div class="profile-field">
+          <label for="name"><strong>Name:</strong></label>
+          <span id="name">{{ user.name }}</span>
+        </div>
+        <div class="profile-field">
+          <label for="address"><strong>Address:</strong></label>
+          <span id="address">{{ user.address }}</span>
+        </div>
+        <div class="profile-field">
+          <label for="email"><strong>Email:</strong></label>
+          <span id="email">{{ user.email }}</span>
+        </div>
+        <div class="profile-field">
+          <label for="password"><strong>Password:</strong></label>
+          <span id="password">********</span>
+        </div>
       </div>
-      <div class="profile-details">
-        <p><strong>Name:</strong> {{ user.name }}</p>
-        <p><strong>ID:</strong> {{ user.id }}</p>
-        <p><strong>Address:</strong> {{ user.address }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
+      <div class="button-group">
+        <button (click)="toggleEditMode()" class="edit-btn">Edit</button>
       </div>
     </div>
-  </div>
-  
-  <ng-template #noUser>
-    <div class="no-user">
-      <p>No user data available. Please log in.</p>
+    
+
+  <!-- Edit Mode Template -->
+  <ng-template #editTemplate>
+    <div class="profile-edit">
+      <label>
+        <strong>Name:</strong>
+        <input type="text" [(ngModel)]="user.name" />
+      </label>
+      <label>
+        <strong>Address:</strong>
+        <input type="text" [(ngModel)]="user.address" />
+      </label>
+      <label>
+        <strong>Email:</strong>
+        <input type="email" [(ngModel)]="user.email" />
+      </label>
+      <div class="button-group">
+        <button (click)="saveProfile()" class="save-btn">Save</button>
+        <button (click)="toggleEditMode()" class="cancel-btn">Cancel</button>
+      </div>
     </div>
   </ng-template>
-  
+</div>

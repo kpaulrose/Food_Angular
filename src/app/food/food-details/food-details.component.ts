@@ -1,9 +1,8 @@
-import { ActivatedRoute, RouterModule } from '@angular/router';
-import { FoodserviceService } from './../../service/foodservice.service';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { FoodService } from './../../service/foodservice.service';
 import { Food } from './../../models/food';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../service/cart.service';
-import { CartItem } from '../../models/cart_item';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from "../../header/header.component";
 
@@ -17,7 +16,9 @@ import { HeaderComponent } from "../../header/header.component";
 export class FoodDetailsComponent implements OnInit {
 
   food!: Food;
-  constructor(private foodService: FoodserviceService,private activatedRoute: ActivatedRoute, private cartService: CartService) {
+  quantity: number = 1;
+  user: any = null;
+  constructor(private foodService: FoodService,private activatedRoute: ActivatedRoute, private cartService: CartService, private router: Router) {
   }
   ngOnInit(): void {
 
@@ -38,11 +39,24 @@ export class FoodDetailsComponent implements OnInit {
         console.error('Error with route params:', error);
       },
     });
+
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+    } 
     
 
   }
-  addToCart(food: Food){
-    this.cartService.addItem(new CartItem(food));
-    alert(`${food.name} has been added to the cart!`);
+  addToCart(food: Food) {
+    this.cartService.updateCartItem(food.id,this.quantity , this.user.id).subscribe({
+      next: () => {
+        alert(`${food.name} has been added to the cart!`);
+        this.router.navigate(['/cart']);
+      },
+      error: (err) => {
+        console.error('Error adding to cart:', err);
+      }
+    });
   }
+  
 }

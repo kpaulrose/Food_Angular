@@ -5,19 +5,19 @@
     <h2>Your Cart</h2>
     
     <div *ngIf="cartItems.length > 0; else emptyCart">
-      <div *ngFor="let item of cartItems; let i = index" class="cart-item">
-        <img [src]="item.food.imageUrl" alt="{{ item.food.name }}" class="food-image" />
+      <div *ngFor="let item of cartItems;" class="cart-item">
+        <img [src]="item.foodDetails?.imageUrl" alt="{{ item.foodDetails?.name }}" class="food-image" />
 
         <div class="item-details">
-          <span class="item-name">{{ item.food.name }}</span>
-          <span class="item-price">€ {{ item.food.price }}</span>
+          <span class="item-name">{{ item.foodDetails?.name }}</span>
+          <span class="item-price">€ {{ item.foodDetails?.price }}</span>
         </div>
 
         <div class="quantity-control">
-          <span class="item-quantity">€{{ item.price }}</span>
-          <button class="quantity-button" (click)="decreaseQuantity(item.food.id)">-</button>
+          <span class="item-quantity">€ {{getPrice(item.foodDetails!.price,item.quantity)}}</span>
+          <button class="quantity-button" (click)="decreaseQuantity(item.foodDetails!.id)">-</button>
           <span class="item-quantity">{{ item.quantity }}</span>
-          <button class="quantity-button" (click)="increaseQuantity(item.food.id)">+</button>
+          <button class="quantity-button" (click)="increaseQuantity(item.foodDetails!.id)">+</button>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
   </div>
 
   <!-- Payment Section -->
-  <div class="payment" *ngIf="totalQuantity > 0">
+  <div class="payment">
     <span class="items_total">Total Items: {{ totalQuantity }}</span>
     <div class="divider"></div>
     <span class="price-total">Total Price: € {{ totalPrice }}</span>

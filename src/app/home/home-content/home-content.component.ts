@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Food } from '../../models/food';
-import { FoodserviceService } from '../../service/foodservice.service';
+import { FoodService } from '../../service/foodservice.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,7 @@ export class HomeContentComponent {
   allFoods: Food[] = [];
   itemsToShow: number = 10;  // How many items to show initially
 
-  constructor(private foodService: FoodserviceService) {}
+  constructor(private foodService: FoodService) {}
 
   ngOnInit(): void {
     this.foodService.getFood().subscribe({

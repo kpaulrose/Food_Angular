@@ -6,7 +6,7 @@ import { LoginPageComponent } from "./login/login-page/login-page.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, HttpClientModule, LoginPageComponent],
+  imports: [RouterModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

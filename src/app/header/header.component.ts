@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
   Logout(): void {
     alert("the cart items will be deleted when you log out");
-    this.cartService.clearCart();
   }
 }
 
