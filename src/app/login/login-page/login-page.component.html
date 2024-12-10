@@ -1,7 +1,13 @@
-<form [formGroup]="loginForm" (ngSubmit)="submit()">
+<div class="login-container">
+  <div class="header-section">
+    <h1>Order Food from Food World</h1>
+    <p>Delicious food delivered to your doorstep!</p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
     <h2>Login</h2>
-    
-    <div>
+
+    <div class="input-group">
       <label for="email">Email:</label>
       <input id="email" type="email" formControlName="email" />
       <div *ngIf="isSubmitted && fc['email'].errors">
@@ -9,24 +15,18 @@
         <small *ngIf="fc['email'].errors['email']">Invalid email format.</small>
       </div>
     </div>
-    
-    <div>
+
+    <div class="input-group">
       <label for="password">Password:</label>
       <input id="password" type="password" formControlName="password" />
       <div *ngIf="isSubmitted && fc['password'].errors">
         <small *ngIf="fc['password'].errors['required']">Password is required.</small>
       </div>
     </div>
-    
+
     <div class="button-wrapper">
       <button type="submit" class="btn btn-primary">Login</button>
-      <button
-        type="button"
-        class="btn btn-secondary"
-        [routerLink]="'/register'"
-      >
-        Not Yet Registered?
-      </button>
+      <button type="button" class="btn btn-secondary" [routerLink]="'/register'">Not Yet Registered?</button>
     </div>
   </form>
-  
+</div>

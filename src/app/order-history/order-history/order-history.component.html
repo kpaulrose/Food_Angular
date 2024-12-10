@@ -1,36 +1,38 @@
 <app-header></app-header>
 <div class="order-history-container">
-    <h2>Your Order History</h2>
-  
-    <!-- Check if orders are available -->
-    <div *ngIf="orders.length > 0; else noOrdersFound">
-      <!-- Iterate over each order -->
-      <div *ngFor="let order of orders" class="order">
-        <!-- Main order details -->
-        <div class="order-main-details">
-          <h3>Order ID: {{ order.orderId }}</h3>
-          <p><strong>Total Quantity:</strong> {{ order.totalQuantity }}</p>
-          <p><strong>Total Amount:</strong> €{{ order.totalAmount }}</p>
-          <p><strong>Order Date:</strong> {{ order.createdAt | date: 'short' }}</p>
-        </div>
-  
-        <!-- Order items -->
-        <div class="order-items">
-          <h4>Order Items:</h4>
-          <ul>
-            <li *ngFor="let item of order.items" class="order-item">
-              <p><strong>Food:</strong> {{ item.foodDetails?.name }}</p>
-              <p><strong>Quantity:</strong> {{ item.quantity }}</p>
-            </li>
-          </ul>
-        </div>
-  
+  <h2>Your Order History</h2>
+
+  <!-- Check if orders are available -->
+  <div *ngIf="orders.length > 0; else noOrdersFound">
+    <!-- Iterate over each order -->
+    <div *ngFor="let order of orders" class="order">
+      <!-- Main order details -->
+      <div class="order-main-details">
+        <h3>Order Date: {{ order.createdAt | date: 'short' }}</h3>
+        <p><strong>Total Quantity:</strong> {{ order.totalQuantity }}</p>
+        <p><strong>Total Amount:</strong> €{{ order.totalAmount }}</p>
+      </div>
+
+      <!-- Order items -->
+      <div class="order-items">
+        <h4>Order Items:</h4>
+        <ul>
+          <li *ngFor="let item of order.items" class="order-item">
+            <div class="item-details">
+              <img [src]="item.foodDetails?.imageUrl" alt="{{ item.foodDetails?.name }}" class="food-image" />
+              <div class="text-details">
+                <p><strong>Food:</strong> {{ item.foodDetails?.name }}</p>
+                <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-  
-    <!-- If no orders are found -->
-    <ng-template #noOrdersFound>
-      <p>No orders found for this user.</p>
-    </ng-template>
   </div>
-  
+
+  <!-- If no orders are found -->
+  <ng-template #noOrdersFound>
+    <p>No orders found for this user.</p>
+  </ng-template>
+</div>

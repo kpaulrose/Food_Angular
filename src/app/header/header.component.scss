@@ -1,91 +1,110 @@
-/* Style for the navigation container */
+/* General Navigation Bar Styling */
 .nav {
   display: flex;
-
   align-items: center;
-  padding: 20px 30px;
-  background-color: #4CAF50; /* Green background for a fresh look */
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #4CAF50, #2a844b); /* Gradient for a dynamic look */
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Depth shadow */
   list-style-type: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px;
   margin: 0;
 }
 
-/* Style for each navigation link */
+/* Navigation Links Styling */
 .nav li {
-  margin-right: 20px; /* More space between links */
+  margin-right: 20px;
 }
 
-/* Style for the anchor tags inside navigation links */
 .nav a {
   text-decoration: none;
   color: #fff;
-  padding: 12px 20px;
-  border-radius: 5px;
+  padding: 10px 18px;
+  border-radius: 8px;
   font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover and active states for links */
-.nav a.active, 
+/* Hover and Active States for Links */
+.nav a.active,
 .nav a:hover {
-  background-color: #007bff; /* Blue background for active and hover */
+  background: rgba(255, 255, 255, 0.2); /* Transparent white on hover/active */
   color: #fff;
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.1); /* Slight zoom */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); /* Subtle hover shadow */
 }
 
-/* Button wrapper for the user name, cart, and logout */
+/* Button Wrapper for Alignment */
 .button-wrapper {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between the buttons */
-  position:absolute;
-  right: 10px;
+  gap: 20px;
 }
 
-/* User name button - rounded, with border and custom font style */
+/* User Name Button */
 .user-name-btn {
-  border: 2px solid #fff; /* White border */
+  border: 2px solid #fff;
   border-radius: 50%; /* Circle shape */
-  padding: 8px 16px;
+  padding: 10px;
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  background-color: #1b412b; /* Transparent background */
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
   cursor: pointer;
   text-transform: capitalize;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for the user name button */
+/* Hover Effect for User Name Button */
 .user-name-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light white background on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  background: rgba(255, 255, 255, 0.3); /* Lighter background on hover */
+  transform: scale(1.1); /* Slight zoom */
 }
 
-/* Styling for the "View Cart" and "Logout" buttons */
-.view-cart, 
+/* "View Cart" and "Logout" Buttons */
+.view-cart,
 .Logout {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #ffffff;
-  color: #333;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  background: #fff;
+  color: #4CAF50;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
 }
 
-/* Hover effect for the "View Cart" and "Logout" buttons */
-.view-cart:hover, 
+/* Hover Effect for Buttons */
+.view-cart:hover,
 .Logout:hover {
-  background-color: #f4f4f4; /* Light background on hover */
-  color: #4CAF50; /* Green text color */
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  background: #f1f1f1; /* Light gray on hover */
+  color: #2a844b;
+  transform: scale(1.05); /* Zoom effect */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .button-wrapper {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .user-name-btn {
+    margin-left: auto; /* Push the user button to the right */
+  }
 }

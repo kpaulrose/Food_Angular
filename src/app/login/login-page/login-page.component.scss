@@ -1,95 +1,131 @@
-/* Container to center the form */
-form {
+/* Main container for the login page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f9f4; /* Light background color */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  /* Header Section */
+  .header-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header-section h1 {
+    font-size: 36px;
+    color: #388e3c; /* Dark green for the header */
+    font-weight: bold;
+  }
+  
+  .header-section p {
+    font-size: 18px;
+    color: #388e3c;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  
+  /* Form Styling */
+  form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    max-width: 400px; /* Max width to prevent it from getting too wide */
-    margin: 100px auto; /* Center vertically and horizontally */
+    max-width: 450px; /* Prevent the form from being too wide */
     padding: 30px;
-    background-color: #eafaf1; /* Light green background */
+    background-color: #ffffff; /* White background for the form */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-}
-
-/* Form title */
-form h2 {
+    transition: all 0.3s ease;
+  }
+  
+  /* Form title */
+  form h2 {
     text-align: center;
-    color: #2e7d32; /* Dark green for the title */
+    color: #388e3c;
     font-size: 24px;
     margin-bottom: 20px;
-}
-
-/* Input fields */
-input[type="email"],
-input[type="password"] {
-    width: 85%;
+  }
+  
+  /* Input fields */
+  input[type="email"],
+  input[type="password"] {
+    width: 95%;
     padding: 12px 15px;
     margin: 8px 0 18px 0;
     border: 1px solid #81c784; /* Green border */
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease;
-}
-
-/* Focus and Hover Effects */
-input[type="email"]:focus,
-input[type="password"]:focus {
+  }
+  
+  /* Focus and Hover Effects */
+  input[type="email"]:focus,
+  input[type="password"]:focus {
     outline: none;
     border-color: #388e3c; /* Darker green on focus */
     box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); /* Green shadow */
-}
-
-/* Button wrapper to center the button */
-.button-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 20px; /* Optional space before the button */
-    gap: 10px;
-}
-
-/* Submit button */
-button[type="submit"] {
-    width: 40%;
-    padding: 12px;
-    background-color: #4caf50; /* Green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for submit button */
-button[type="submit"]:hover {
-    background-color: #388e3c; /* Darker green on hover */
-}
-
-/* Secondary button */
-button.btn-secondary {
-    width: 40%;
-    padding: 12px;
-    background-color: #81c784; /* Light green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for secondary button */
-button.btn-secondary:hover {
-    background-color: #66bb6a; /* Slightly darker light green */
-}
-
-/* Error messages */
-small {
-    color: #d32f2f; /* Red for error messages */
+  }
+  
+  /* Input group styling */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Error messages */
+  small {
+    color: #d32f2f; /* Red color for error messages */
     font-size: 12px;
-}
+  }
+  
+  /* Button wrapper to center the buttons */
+  .button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    width: 48%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for submit button */
+  button[type="submit"]:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  
+  /* Secondary button */
+  button.btn-secondary {
+    width: 48%;
+    padding: 12px;
+    background-color: #81c784;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for secondary button */
+  button.btn-secondary:hover {
+    background-color: #66bb6a;
+  }
+  
