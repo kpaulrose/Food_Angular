@@ -1,0 +1,73 @@
+.food-list {
+    display: flex;                /* Enable Flexbox */
+    flex-wrap: wrap;              /* Allow items to wrap to the next line */
+    gap: 20px;                    /* Add space between items */
+    justify-content: center;      /* Center items horizontally */
+    padding: 20px;                /* Add some padding around the list */
+  }
+  
+  .food-item {
+    display: flex;
+    flex-direction: column;       /* Stack food image and details vertically */
+    align-items: center;          /* Center items horizontally within each box */
+    background-color: #ecfceb;    /* Soft, warm background color */
+    padding: 15px;
+    border: 1px solid #2a844b;    /* Subtle border with a warm tone */
+    border-radius: 12px;          /* Rounded corners for a modern look */
+    width: 280px;                 /* Set a fixed width for consistency */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s;   /* Smooth hover animations */
+  }
+  
+  .food-item:hover {
+    transform: scale(1.05);       /* Slightly enlarge on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Intensify shadow on hover */
+  }
+  
+  .food img {
+    width: 100%;                  /* Ensure image width matches container */
+    height: 200px;                /* Fixed height for uniformity */
+    object-fit: cover;            /* Ensure image scaling without distortion */
+    border-radius: 8px;           /* Rounded corners for images */
+  }
+  
+  .food-image {
+    margin-top: 10px;
+    text-align: center;           /* Center-align text inside food item */
+  }
+  
+  .food-image h3 {
+    font-size: 1.4em;             /* Increase font size for the title */
+    color: #2a844b;               /* Warm and bold title color */
+    font-weight: bold;
+  }
+  
+  .food-image p {
+    margin: 5px 0;
+    color: #6c6c6c;               /* Neutral color for text */
+    font-size: 0.95em;            /* Slightly smaller font size for description */
+    line-height: 1.4;             /* Improve readability with spacing */
+  }
+  
+  .food-image p.description {
+    font-size: 1em;               /* Slightly larger for food description */
+    color: #444;                  /* Darker color for emphasis */
+    font-style: italic;           /* Add a subtle italic style */
+    margin-bottom: 10px;          /* Add spacing below the description */
+  }
+  
+  .food-image p.price {
+    font-size: 1.1em;             /* Highlight the price with larger font */
+    color: #2a844b;               /* Warm color matching the design theme */
+    font-weight: bold;            /* Make the price stand out */
+  }
+  
+  .food-image p.cookTime {
+    font-size: 0.9em;             /* Smaller font for less important info */
+    color: #888;                  /* Lighter text color for cook time */
+  }
+  
+  .price {
+    color: red !important;
+  }
+  

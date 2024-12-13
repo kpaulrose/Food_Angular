@@ -1,14 +1,11 @@
-
 <ul class="nav">
-    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/user" routerLinkActive="active">User Info</a></li>
-    <div class="button-wrapper">
-      <button class="view-cart" routerLink="/cart">View Cart</button>
-      <button class="view-cart" routerLink="/order_history">Order Details</button>
-      <button class="Logout" (click)="Logout()" routerLink="/">Logout</button>
-      <button class="user-name-btn">{{ userName }}</button>
-    </div>
-  </ul>
-  
-
-  
+  <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+  <li><a routerLink="/order_foods" routerLinkActive="active">Order Foods</a></li>
+  <li><a routerLink="/user" routerLinkActive="active">User Info</a></li>
+  <div class="button-wrapper">
+    <button class="view-cart" routerLink="/cart">View Cart</button>
+    <button class="view-cart" routerLink="/order_history">Order Details</button>
+    <button class="Logout" (click)="Logout()" routerLink="/">Logout</button>
+    <button class="user-name-btn">{{ userName }}</button>
+  </div>
+</ul>

@@ -1,16 +1,31 @@
 <app-header></app-header>
-<div class="food-list">
-    <a *ngFor="let food of foods"style="text-decoration:none; color:inherit" class="food-item" [routerLink]="'/food/food-detail/'+ food.id">
-        <div class="food">
-           <img [src]="food.imageUrl" alt="food.imageUrl">
-            <div class="food-image">
-                <h3>{{ food.name }}</h3>
-                <p>{{ food.price }}</p>
-                <p>{{ food.cookTime }} minutes</p>
-            </div>
-        </div>
-    </a>
+
+<div class="homepage">
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="store-name">Food World</h1>
+    <p class="tagline">Your One-Stop Shop for Food Delights</p>
+  </div>
+
+  <!-- Store Details Section -->
+  <div class="store-details">
+    <h2>Welcome to Food World!</h2>
+    <p>We are your go-to online destination for high-quality food, tailored to your tastes and needs.</p>
+
+    <div class="details-cards">
+      <div class="card">
+        <h3>Our Location</h3>
+        <p>123 Delicious Avenue, Food City, FDT 2457</p>
+      </div>
+      <div class="card">
+        <h3>Contact Us</h3>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+      <div class="card">
+        <h3>Since 2020</h3>
+        <p>Serving delicious food for over 4 years. Quality and satisfaction guaranteed!</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- You can show a loading spinner or a message while loading -->
-<div *ngIf="foods.length === 0">Loading...</div>

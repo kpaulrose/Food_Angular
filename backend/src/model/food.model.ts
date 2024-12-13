@@ -5,6 +5,7 @@ export interface Food {
     price: number;
     cookTime: string;
     imageUrl: string;
+    description: string;
 }
 
 export const FoodSchema = new Schema<Food>({
@@ -12,6 +13,7 @@ export const FoodSchema = new Schema<Food>({
     price: { type: Number, required: true },
     cookTime: { type: String, required: true },
     imageUrl: { type: String, required: true },
+    description: { type: String, required: true },
 }, {
     timestamps: true,
     toJSON:{

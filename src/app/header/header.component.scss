@@ -4,14 +4,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
-  background: linear-gradient(90deg, #4CAF50, #2a844b); /* Gradient for a dynamic look */
+  background: linear-gradient(90deg, #4CAF50, #2a844b); /* Gradient for dynamic look */
   border-radius: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Depth shadow */
   list-style-type: none;
   margin: 0;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
-/* Navigation Links Styling */
 .nav li {
   margin-right: 20px;
 }
@@ -40,6 +40,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap; /* Makes buttons stack on smaller screens */
+  justify-content: flex-end; /* Right align the buttons */
 }
 
 /* User Name Button */
@@ -89,22 +91,43 @@
   transform: scale(1.05); /* Zoom effect */
 }
 
-/* Responsive Design for Mobile */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    flex-direction: column; /* Stack nav items vertically on smaller screens */
+    align-items: flex-start; /* Align to left */
+  }
+
+  .nav li {
+    margin: 10px 0; /* Space out the nav items vertically */
   }
 
   .button-wrapper {
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    align-items: flex-start;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+    width: 100%; /* Full width to align the buttons */
   }
 
+  .view-cart,
+  .Logout,
   .user-name-btn {
-    margin-left: auto; /* Push the user button to the right */
+    width: 100%; /* Buttons take up full width on mobile */
+    margin: 5px 0; /* Add spacing between buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .nav a {
+    font-size: 14px; /* Smaller font size for links */
+  }
+
+  .view-cart,
+  .Logout,
+  .user-name-btn {
+    font-size: 14px; /* Adjust button text size */
   }
 }

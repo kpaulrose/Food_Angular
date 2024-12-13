@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+    { path: 'order_foods', loadChildren: () => import('./order-foods/order-foods.module').then(m => m.OrderFoodsModule) },
     { path: 'food', loadChildren: () => import('./food/food.module').then(m => m.FoodModule) },
     { path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule) },  // Correct lazy loading for Checkout module
     { path: 'user', loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule) },
