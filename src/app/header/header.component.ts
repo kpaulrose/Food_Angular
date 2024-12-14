@@ -11,7 +11,7 @@ import { CartService } from '../service/cart.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
-  userName!: number;
+  userName!: string;
   constructor(private cartService: CartService){
 
   }
@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
 
 
   Logout(): void {
-    alert("the cart items will be deleted when you log out");
+    alert("Are you sure to logout");
   }
 }
 

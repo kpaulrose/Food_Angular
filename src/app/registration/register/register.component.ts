@@ -4,22 +4,24 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserService } from '../../service/user.service';
 import { response } from 'express';
 import { error } from 'console';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
 registrationForm!: FormGroup;
 isSubmitted = false;
-constructor(private formBuilder: FormBuilder,private userService:UserService){
+constructor(private formBuilder: FormBuilder,private userService:UserService, private router:Router){
   this.registrationForm = this.formBuilder.group({
     name:   ['', Validators.required],
     email : ['', [Validators.required, Validators.email]],
     address: ['', Validators.required],
+    phone: ['', Validators.required],
     password:['', [Validators.minLength(6),Validators.required]]
   })
 }
@@ -35,9 +37,11 @@ submit(){
     const password = this.fc['password'].value;
     const name = this.fc['name'].value;
     const address = this.fc['address'].value;
-  this.userService.register(name,email,address,password).subscribe({
+    const phone = this.fc['phone'].value;
+  this.userService.register(name,email,address,password,phone).subscribe({
     next: (response) => {
-      alert("Registration is sucessfull")
+      alert("Registration is sucessfull");
+      this.router.navigate(['/']);
     },
     error: (error) =>{
       if (error.status === 400) {

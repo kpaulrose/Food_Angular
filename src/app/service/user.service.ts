@@ -14,13 +14,13 @@ export class UserService {
     return this.http.post(LOGIN, body, { withCredentials: true });
   }
 
-  register(name: string, email:string, address:string, password:string) {
-    const body = { name, email, address, password };
+  register(name: string, email:string, address:string, password:string, phone: String) {
+    const body = { name, email, address, password ,phone};
     return this.http.post(REGISTER, body); // Ensure REGISTER points to the correct backend route
   }
 
-  update(id:string,name:string,email:string,address:string,password:string){
-    const body = {id,name,email,address,password};
+  update(id:string,name:string,email:string,address:string,password:string,phone:string){
+    const body = {id,name,email,address,password,phone};
     return this.http.put(USER_UPDATE,body);
 
   }

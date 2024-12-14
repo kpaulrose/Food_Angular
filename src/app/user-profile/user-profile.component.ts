@@ -23,6 +23,7 @@ export class UserProfileComponent implements OnInit{
     const userData = localStorage.getItem('user');
     if (userData) {
       this.user = JSON.parse(userData);
+      console.log(this.user);
     } else {
       console.error('No user data found. Redirecting to login.');
       // Redirect to login if no user data found
@@ -35,7 +36,7 @@ export class UserProfileComponent implements OnInit{
   }
   saveProfile(): void {
     // Send the updated user data to the UserService for backend update
-    this.userService.update(this.user.id,this.user.name, this.user.email, this.user.address, this.user.password).subscribe({
+    this.userService.update(this.user.id,this.user.name, this.user.email, this.user.address, this.user.password,this.user.phone).subscribe({
       next: (response) => {
         // Handle successful response (you can update the UI, show a success message, etc.)
         alert('Profile updated successfully');

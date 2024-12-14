@@ -102,7 +102,8 @@ app.post("/api/user/login", async (req, res) => {
                 id: user._id,
                 name: user.name,
                 email: user.email,
-                address: user.address
+                address: user.address,
+                phone:user.phone
             },
             token
         });
@@ -117,7 +118,7 @@ app.post("/api/user/login", async (req, res) => {
 
 
 app.post("/api/user/register", async (req, res) => {
-    const { email, password, name, address } = req.body;
+    const { email, password, name, address,phone } = req.body;
 
     try {
         // Check if the user already exists in the database
@@ -135,6 +136,7 @@ app.post("/api/user/register", async (req, res) => {
             email,
             address,
             password,
+            phone
         });
 
         // Save the new user to the database
@@ -161,7 +163,7 @@ app.post("/api/user/register", async (req, res) => {
 });
 
 app.put("/api/user/update", async (req, res) => {
-    const { id, name, email, password, address } = req.body;
+    const { id, name, email, password, address,phone} = req.body;
 
     try {
         // Find the user by ID
@@ -190,6 +192,7 @@ app.put("/api/user/update", async (req, res) => {
         if (name) user.name = name;
         if (password) user.password = password; // Ideally hash the password here
         if (address) user.address = address;
+        if(phone) user.phone = phone
 
         // Save updated user information to the database
         await user.save();
@@ -203,6 +206,7 @@ app.put("/api/user/update", async (req, res) => {
                 name: user.name,
                 email: user.email,
                 address: user.address,
+                phone: user.phone
             },
         });
     } catch (error) {

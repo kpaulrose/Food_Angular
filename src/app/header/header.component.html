@@ -6,6 +6,6 @@
     <button class="view-cart" routerLink="/cart">View Cart</button>
     <button class="view-cart" routerLink="/order_history">Order Details</button>
     <button class="Logout" (click)="Logout()" routerLink="/">Logout</button>
-    <button class="user-name-btn">{{ userName }}</button>
+    <button class="user-name-btn">{{ userName.charAt(0).toUpperCase() }}</button>
   </div>
 </ul>

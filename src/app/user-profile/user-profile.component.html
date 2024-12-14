@@ -24,6 +24,10 @@
           <span id="email">{{ user.email }}</span>
         </div>
         <div class="profile-field">
+          <label for="phone"><strong>Phone number:</strong></label>
+          <span id="email">{{ user.phone}}</span>
+        </div>
+        <div class="profile-field">
           <label for="password"><strong>Password:</strong></label>
           <span id="password">********</span>
         </div>
@@ -48,6 +52,10 @@
       <label>
         <strong>Email:</strong>
         <input type="email" [(ngModel)]="user.email" />
+      </label>
+      <label>
+        <strong>Phone number:</strong>
+        <input type="phone" [(ngModel)]="user.phone" />
       </label>
       <div class="button-group">
         <button (click)="saveProfile()" class="save-btn">Save</button>
