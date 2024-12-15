@@ -1,27 +1,29 @@
 # AngularProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.  
+It's a project to create an online food ordering app to browse menus and place orders easily.
 
-## Development server
+## Development Server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Run `ng serve` for a dev server.  
+- Navigate to `http://localhost:4200/`.  
+- The application will automatically reload when source files are changed.  
 
-## Code scaffolding
+## Backend Configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Database**: MongoDB  
+  - Connection String:  
+    `MONGO_URI="mongodb+srv://username:password@cluster0.lc9hq.mongodb.net/FoodOrder?retryWrites=true&w=majority&appName=FoodOrder"`  
+- **Server**: Backend server runs on **port 5003**.
 
-## Build
+## Key Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Browse Menu**: View a wide variety of food items and cuisines.
+- **Order Food Online**: Place orders directly from the app.  
+- **User Authentication**: Secure login and registration for users.
 
-## Running unit tests
+## Development Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Use `npm install` to install all required dependencies.  
+- Ensure the MongoDB service is running and properly connected.  
+- Update the `environment.ts` file for API configurations if needed.
